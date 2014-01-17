@@ -25,8 +25,16 @@ $(function(){
 		//profile image in the top left and username/fullname. -->
 		//<!-- HINT: jQuery ".prepend" method -->
 		var text = $('textarea').val();
+		
 
-		$('#stream').prepend(text);
+		$('#stream').prepend(
+			"<div class='tweet'>" +
+				"<div class='content'>" + 
+					"<img class='avatar' src='img/damenleeturks.jpg' />" +
+					"<strong class='fullname'>Greg</strong>" +		
+					"<p class='tweet-text'>" + text + "</p>" + 
+				"</div>"); +
+			"</div>"
 
 
 	});
