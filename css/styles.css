@@ -127,7 +127,14 @@ body {
 		margin-bottom: 1em;
 		box-sizing: border-box;
 	}
+
+	.expand {
+		height: 5em;
+	}
+
+
 		#tweet-controls {
+			display: none;
 			text-align: right;
 		}
 			#tweet-controls div {
