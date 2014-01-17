@@ -12,30 +12,43 @@ $(function(){
 
 		if (count >= 130 ) {
 			$('#char-count').css('color', 'red');
-			$('.button').attr('disabled', 'disabled');
 		} else {
 			$('#char-count').css('color', 'black');
-			$('.button').removeAttr('disabled', 'disabled');
+
+		}
+
+		if (count > 140) {
+			$('.button').attr('disabled', 'disabled');
+		} else {
+			$('.button').removeAttr('disabled', 'disabled');			
 		}
 	});
 
 	$('.button').click(function(){
-		//<!-- STEP 5: When the user successfully inputs characters and clicks the “Tweet” button, a new 
-		//tweet should be created and added to the tweet stream in the main column, using the user’s fake 
-		//profile image in the top left and username/fullname. -->
-		//<!-- HINT: jQuery ".prepend" method -->
 		var text = $('textarea').val();
 		
 
 		$('#stream').prepend(
 			"<div class='tweet'>" +
 				"<div class='content'>" + 
-					"<img class='avatar' src='img/damenleeturks.jpg' />" +
+					"<img class='avatar' src='img/alagoon.jpg' />" +
 					"<strong class='fullname'>Greg</strong>" + 
 					"<span class='username'> @greg</span>" +		
 					"<p class='tweet-text'>" + text + "</p>" + 
-				"</div>"); +
-			"</div>"
+					"<div class='tweet-actions'>"+
+						"<ul>" +
+							"<li>" + "<span class='icon action-reply'>" +
+							"</span>" + " Reply " + "</li>" +
+							"<li>" + "<span class='icon action-retweet'>" +
+							"</span>" + " Retweet " + "</li>" +
+							"<li>" + "<span class='icon action-favorite'>" +
+							"</span>" + " Favorite "  + "</li>" +
+							"<li>" + "<span class='icon action-more'>" +
+							"</span>" + " More " + "</li>" +
+						"</ul>" +
+					"</div>" +
+				"</div>" +
+			"</div>");
 
 
 	});
