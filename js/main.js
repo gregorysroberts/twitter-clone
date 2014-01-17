@@ -24,7 +24,10 @@ $(function(){
 		//tweet should be created and added to the tweet stream in the main column, using the user’s fake 
 		//profile image in the top left and username/fullname. -->
 		//<!-- HINT: jQuery ".prepend" method -->
-		$('#stream').prepend('<p>Greg</p>');
+		var text = $('textarea').val();
+
+		$('#stream').prepend(text);
+
 
 	});
 
