@@ -31,7 +31,8 @@ $(function(){
 			"<div class='tweet'>" +
 				"<div class='content'>" + 
 					"<img class='avatar' src='img/damenleeturks.jpg' />" +
-					"<strong class='fullname'>Greg</strong>" +		
+					"<strong class='fullname'>Greg</strong>" + 
+					"<span class='username'> @greg</span>" +		
 					"<p class='tweet-text'>" + text + "</p>" + 
 				"</div>"); +
 			"</div>"
