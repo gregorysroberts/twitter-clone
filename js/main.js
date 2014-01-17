@@ -10,7 +10,11 @@ $(function(){
 
 		$('#char-count').text(140-count);
 
-		//else subtract number
+		if (count >= 130 ) {
+			$('#char-count').css('color', 'red');
+		} else {
+			$('#char-count').css('color', 'black');
+		}
 		
 
 	});
