@@ -55,9 +55,11 @@ $(function(){
 	}); //button.click function
 
 	$('.tweet').click(function(){
-		$('.stats', this).css('display','block');
-		//make only that certain tweet display stats
+		$('.stats', this).css('display', 'block');
 	});
+
+
+
 
 
 

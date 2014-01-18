@@ -153,6 +153,11 @@ body {
 	border-bottom: 1px solid #e8e8e8;
 	min-height: 60px;
 	border-radius: 6px;
+	cursor: pointer;
+}
+
+.tweet:hover {
+	background: whiteSmoke;
 }
 
 	.tweet .avatar {
@@ -225,6 +230,7 @@ body {
 		border-top: 1px solid #e8e8e8;
 		display: none;
 	}
+
 		.stats, .stats div {
 			box-sizing: border-box;
 		}
