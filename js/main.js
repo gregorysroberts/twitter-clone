@@ -3,7 +3,7 @@ $(function(){
 	$('textarea').click(function(){
 		$(this).addClass('expand');
 		$('#tweet-controls').css('display', 'block');
-	});
+	});//textarea click function 
 
 	$('textarea').keydown(function() {
 		var count = $(this).val().length;
@@ -22,7 +22,7 @@ $(function(){
 		} else {
 			$('.button').removeAttr('disabled', 'disabled');			
 		}
-	});
+	});//textarea countdown function
 
 	$('.button').click(function(){
 		var text = $('textarea').val();
@@ -50,8 +50,13 @@ $(function(){
 				"</div>" +
 			"</div>");
 
+	}); //button.click function
 
+	$('.tweet').click(function(){
+		$('.stats').css('display','block');
+		//make only that certain tweet display stats
 	});
 
 
-});
+
+}); //DOM ready function
