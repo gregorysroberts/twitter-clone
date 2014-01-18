@@ -26,7 +26,7 @@ $(function(){
 
 	$('.button').click(function(){
 		var text = $('textarea').val();
-		
+	
 
 		$('#stream').prepend(
 			"<div class='tweet'>" +
@@ -47,17 +47,36 @@ $(function(){
 							"</span>" + " More " + "</li>" +
 						"</ul>" +
 					"</div>" +
+
+					"<div class='stats'>" +
+						"<div class='retweets'>" +
+							"<p class ='num-retweets'>" + "7" + "</p>" +
+							"<p>" + "RETWEETS" + "</p>" +
+						"</div>" +
+						"<div class='favorites'>" +
+							"<p class ='num-retweets'>" + "8" + "</p>" +
+							"<p>" + "FAVORITES" + "</p>" +
+						"</div>" +
+					"</div>" +
+
 				"</div>" +
 			"</div>");
 
-		//remove text from text area on button click
+        $('textarea').val('');
 
 	}); //button.click function
 
 	$('.tweet').click(function(){
 		$('.stats', this).css('display', 'block');
+	});	
+
+	$('.tweet').mouseenter(function(){
+		$('.tweet-actions', this).css('opacity', '1');
 	});
 
+	$('.tweet').mouseleave(function(){
+		$('.tweet-actions', this).css('opacity', '.4');
+	});
 
 
 
