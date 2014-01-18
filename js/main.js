@@ -1,11 +1,11 @@
 $(function(){
 
-	$('textarea').click(function(){
+	$('textarea').on('click', function(){
 		$(this).addClass('expand');
 		$('#tweet-controls').css('display', 'block');
 	});//textarea click function 
 
-	$('textarea').keydown(function() {
+	$('textarea').on('keydown', function() {
 		var count = $(this).val().length;
 
 		$('#char-count').text(140-count);
@@ -24,60 +24,30 @@ $(function(){
 		}
 	});//textarea countdown function
 
-	$('.button').click(function(){
-		var text = $('textarea').val();
-	
+	$('.button').on('click', function(){
+		var text     = $('textarea').val(),
+			newTweet = $('.tweet').eq(0).clone();
 
-		$('#stream').prepend(
-			"<div class='tweet'>" +
-				"<div class='content'>" + 
-					"<img class='avatar' src='img/alagoon.jpg' />" +
-					"<strong class='fullname'>Greg</strong>" + 
-					"<span class='username'> @greg</span>" +		
-					"<p class='tweet-text'>" + text + "</p>" + 
-					"<div class='tweet-actions'>"+
-						"<ul>" +
-							"<li>" + "<span class='icon action-reply'>" +
-							"</span>" + " Reply " + "</li>" +
-							"<li>" + "<span class='icon action-retweet'>" +
-							"</span>" + " Retweet " + "</li>" +
-							"<li>" + "<span class='icon action-favorite'>" +
-							"</span>" + " Favorite "  + "</li>" +
-							"<li>" + "<span class='icon action-more'>" +
-							"</span>" + " More " + "</li>" +
-						"</ul>" +
-					"</div>" +
+		newTweet.find('.tweet-text').text(text);
 
-					"<div class='stats'>" +
-						"<div class='retweets'>" +
-							"<p class ='num-retweets'>" + "7" + "</p>" +
-							"<p>" + "RETWEETS" + "</p>" +
-						"</div>" +
-						"<div class='favorites'>" +
-							"<p class ='num-retweets'>" + "8" + "</p>" +
-							"<p>" + "FAVORITES" + "</p>" +
-						"</div>" +
-					"</div>" +
-
-				"</div>" +
-			"</div>");
+		$('#stream').prepend(newTweet);
 
         $('textarea').val('');
         $('#char-count').text(140);
 
-
 	}); //button.click function
 
-	$('.tweet').click(function(){
-		$('.stats', this).css('display', 'block');
+	$('.tweet').on('click', function(){
+		$('.stats').hide();
+		$(this).find('.stats').css('display', 'block');
 	});	
 
-	$('.tweet').mouseenter(function(){
-		$('.tweet-actions', this).css('opacity', '1');
+	$('.tweet').on('mouseenter', function(){
+		$(this).find('.tweet-actions').css('opacity', '1');
 	});
 
-	$('.tweet').mouseleave(function(){
-		$('.tweet-actions', this).css('opacity', '.4');
+	$('.tweet').on('mouseleave', function(){
+		$(this).find('.tweet-actions').css('opacity', '.4');
 	});
 
 
