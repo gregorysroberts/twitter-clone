@@ -63,6 +63,8 @@ $(function(){
 			"</div>");
 
         $('textarea').val('');
+        $('#char-count').text(140);
+
 
 	}); //button.click function
 
