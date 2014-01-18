@@ -50,10 +50,12 @@ $(function(){
 				"</div>" +
 			"</div>");
 
+		//remove text from text area on button click
+
 	}); //button.click function
 
 	$('.tweet').click(function(){
-		$('.stats').css('display','block');
+		$('.stats', this).css('display','block');
 		//make only that certain tweet display stats
 	});
 
