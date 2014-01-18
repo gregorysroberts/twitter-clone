@@ -29,6 +29,9 @@ $(function(){
 			newTweet = $('.tweet').eq(0).clone();
 
 		newTweet.find('.tweet-text').text(text);
+		newTweet.find('.avatar').attr('src', 'img/alagoon.jpg');
+		newTweet.find('.fullname').text('Greg');
+		newTweet.find('.username').text('@greg');
 
 		$('#stream').prepend(newTweet);
 
